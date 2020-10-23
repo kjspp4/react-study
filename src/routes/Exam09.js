@@ -1,33 +1,36 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import reactRouterDom from 'react-router-dom';
 
 const Exam09 = () => {
-  const [information ,setInformation] =useState([
+  const [information ,setInformation] =useState({items:[
       {id:0, name:"홍길동", phone:11},
       {id:1, name:"고길동", phone:90},
       {id:2, name:"둘리", phone:33},
-      {id:3, name:"또치", phone:44}
-  ]);
-  const [cnt, setCnt] = useState(4);
+      {id:3, name:"또치", phone:44}]
+    }
+  );
 
+
+  const [cnt, setCnt] = useState(4);
+  const [keyword, setKeyword] = useState('');
 
 
   const handleCreate = (user)=>{
       //setInformation(  {name:name, phone:phone});
       //console.log(user);
       setCnt(cnt+1);
-      setInformation([...information, {id:cnt , ...user }]);
+      setInformation({...information, items: [...information.items, {id:cnt, name: user.name, phone:user.phone } ]  } ) ;
       //console.log("handel create")
   }
 
 
   const handelRemove= (id)=>{
-    setInformation([ ...information.filter(p=>p.id !== id)]);
+    setInformation({items: [ ...information.items.filter(p=>p.id !== id)] } );
   }
 
 
   const handleUpdate=(id, user)=>{
-    const list =  information.map(
+    const list =  information.items.map(
         info =>{
             if(info.id === id){
                 return {
@@ -38,11 +41,13 @@ const Exam09 = () => {
             return info;
         });
 
-    setInformation(list);
+    setInformation({items:list });
 
       console.log( JSON.stringify(list));
+  }
 
-   
+  const handleSearch=(e)=>{
+    setKeyword( e.target.value);
   }
 
 
@@ -52,7 +57,9 @@ const Exam09 = () => {
     <>  
         {/* <h1>{`부모.. name :  ${user.name} , phone : ${user.phone}  ` } </h1> */}
         {/* <h1>  { JSON.stringify(information) }</h1> */}
-        <PhoneInfoList data={information} onRemove= {handelRemove} onUpdate= {handleUpdate} ></PhoneInfoList>
+
+         <div> <b>검색:</b> <input name="search"  value= {keyword}  onChange={handleSearch}  />  </div>
+        <PhoneInfoList data={information.items.filter( p=>p.name.indexOf(keyword) > -1)} onRemove= {handelRemove} onUpdate= {handleUpdate} ></PhoneInfoList>
         <PhoneForm onCreate={handleCreate}  />
     </>
   )
@@ -60,7 +67,7 @@ const Exam09 = () => {
 
 
 
-const PhoneInfoList = ({data, onRemove, onUpdate}) =>{
+const PhoneInfoList =  ({data, onRemove, onUpdate}) =>{
     const list = data.map(info=>(
         <PhoneInfo info={info} key={info.id} onRemove={onRemove} onUpdate= {onUpdate} ></PhoneInfo>
     ));
@@ -73,7 +80,7 @@ const PhoneInfoList = ({data, onRemove, onUpdate}) =>{
 }
 
 
-const PhoneInfo = ({info, onRemove,onUpdate}) => {
+const PhoneInfo =  ({info, onRemove,onUpdate}) => {
     const style = {
         border: '1px solid black',
         padding:'8px',
