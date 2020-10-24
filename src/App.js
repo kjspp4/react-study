@@ -11,6 +11,9 @@ import Exam07 from './routes/Exam07'
 import Exam08 from './routes/Exam08'
 import Exam09 ,{PhoneForm} from './routes/Exam09'
 
+import Exam10  from './routes/Exam10'
+import Exam11  from './routes/Exam11'
+import Exam12  from './routes/Exam12'
 
 const Home = ()=>{
   return(
@@ -101,6 +104,9 @@ function App() {
           <li><NavLink exact to="/exam07"> count  만들기.. </NavLink> </li>
           <li><NavLink exact to="/exam08"> life cycle componentDidMount, componentDidUpdate, componentWillUnmount 생성주기 </NavLink> </li>
           <li><NavLink exact to="/exam09"> 전화번호 만들기 </NavLink> </li>
+          <li><NavLink exact to="/exam10"> 전화번호 만들기 순수 리덕스 상태관리버젼 1 </NavLink> </li>
+          <li><NavLink exact to="/exam11"> 박스 색깔 바꾸기 연습 </NavLink> </li>
+          <li><NavLink exact to="/exam12"> 박스 색깔 바꾸기 연습 순수 리덕스 버젼</NavLink> </li>
 
           {/* <li><NavLink exact to="/exam01" >useState 연습</NavLink> </li>
           <li><NavLink exact to="/contract">Contract</NavLink> </li> */}
@@ -116,7 +122,9 @@ function App() {
           <Route exact  path="/exam08" component={Exam08}></Route>
           <Route exact  path="/exam09" component={Exam09}></Route>
           <Route exact  path="/phoneForm" component={PhoneForm}></Route>
-          
+          <Route exact  path="/exam10" component={Exam10}></Route>
+          <Route exact  path="/exam11" component={Exam11}></Route>
+          <Route exact  path="/exam12" component={Exam12}></Route>
           {/* <Route exact path="/exam01"  component={Exam01}  > </Route>
           <Route exact path="/contract" component={Contract} ></Route> */}
         
