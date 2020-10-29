@@ -1,3 +1,9 @@
+#computer{
+    width: 142px;
+    height: 200px;
+    background-position: 0 0;
+}
+
 .active{
     background-color: tomato;
     text-decoration: none;
