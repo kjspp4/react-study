@@ -1,4 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
+
+
+const Try= memo( ({items})=>{
+    return(
+        <>
+            <li> {`시도:${items.try} , 결과 :${items.result}`} </li>
+        </>
+    );
+});
+
 
 const Exam15 = () => {
     const [result, setResult] = useState('');
@@ -16,7 +26,6 @@ const Exam15 = () => {
         }
         return ret;
     }
-
  
     useEffect(()=>{
         console.log("랜더링.. ")
@@ -24,39 +33,36 @@ const Exam15 = () => {
     }, [])
 
 
-    const strike= ()=>{
-       let ret_strike = 0;
-       let ret_ball = 0;
+    
+     const  handleSubmit=(e)=>{
+          e.preventDefault();
+         
+          let ret_strike = 0;
+         let ret_ball = 0;
 
         if(value ===answer.join('')){
             setData( {result:'홈런', tries:[...datas.tries, { try:value, result:'홈런'}] } );
         }else{
-            
+            for(let i = 0; i<value.length; ++i){
+                let _val =  Number.parseInt(value[i]);
+                console.log(typeof value[i])
+                console.log(typeof answer[i])
+    
+                if(_val ===answer[i] )
+                {
+                    ret_strike++;
+                }else{
+                    if(answer.includes(_val)){
+                        ret_ball++;
+                    }
+                }
+            }
+            let _retsult = `${ret_strike} 스트라이크 ${ret_ball}  입니다.`
+            setData( {result:_retsult, tries:[...datas.tries, { try:value, result:_retsult}] } );
         }
 
+        setAnswer(getNumbers());
 
-        for(let i = 0; i<value.length; ++i){
-            let _val =  Number.parseInt(value[i]);
-            console.log(typeof value[i])
-            console.log(typeof answer[i])
-
-
-
-            if(_val ===answer[i] )
-            {
-                ret_strike++;
-            }
-           
-            
-        } 
-        return ret_strike;
-    }
-
-
-     const  handleSubmit=(e)=>{
-          e.preventDefault();
-         
-          console.log(strike())
       }
 
       const onChange=(e)=>{
@@ -74,7 +80,9 @@ const Exam15 = () => {
             </form>
             <div>시도 : { datas.tries.length} </div>
             <ul>
-
+              {
+                  datas.tries.map( (p)=>  <Try items={p}></Try>)
+              }
             </ul>
         </div>
     );

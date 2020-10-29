@@ -17,6 +17,9 @@ import Exam12  from './routes/Exam12'
 import Exam13  from './routes/Exam13'
 import Exam14  from './routes/Exam14'
 import Exam15  from './routes/Exam15'
+import Exam16  from './routes/Exam16'
+import Exam17  from './routes/Exam17'
+import Exam18  from './routes/Exam18'
 
 const Home = ()=>{
   return(
@@ -113,6 +116,10 @@ function App() {
           <li><NavLink exact to="/exam13"> 끝말잊기.. </NavLink> </li>
           <li><NavLink exact to="/exam14"> 구구단연습 </NavLink> </li>
           <li><NavLink exact to="/exam15"> 숫자야구 </NavLink> </li>
+          <li><NavLink exact to="/exam16"> 리액트 성능 랜더링 UseRef </NavLink> </li>
+          <li><NavLink exact to="/exam17"> 리액트 반응속도 체크 </NavLink> </li>
+          <li><NavLink exact to="/exam18"> 가위바위보</NavLink> </li>
+
 
           {/* <li><NavLink exact to="/exam01" >useState 연습</NavLink> </li>
           <li><NavLink exact to="/contract">Contract</NavLink> </li> */}
@@ -134,6 +141,9 @@ function App() {
           <Route exact  path="/exam13" component={Exam13}></Route>
           <Route exact  path="/exam14" component={Exam14}></Route>
           <Route exact  path="/exam15" component={Exam15}></Route>
+          <Route exact  path="/exam16" component={Exam16}></Route>
+          <Route exact  path="/exam17" component={Exam17}></Route>
+          <Route exact  path="/exam18" component={Exam18}></Route>
           {/* <Route exact path="/exam01"  component={Exam01}  > </Route>
           <Route exact path="/contract" component={Contract} ></Route> */}
         
