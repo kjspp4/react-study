@@ -20,6 +20,7 @@ import Exam15  from './routes/Exam15'
 import Exam16  from './routes/Exam16'
 import Exam17  from './routes/Exam17'
 import Exam18  from './routes/Exam18'
+import Exam19  from './routes/Exam19'
 
 const Home = ()=>{
   return(
@@ -119,7 +120,7 @@ function App() {
           <li><NavLink exact to="/exam16"> 리액트 성능 랜더링 UseRef </NavLink> </li>
           <li><NavLink exact to="/exam17"> 리액트 반응속도 체크 </NavLink> </li>
           <li><NavLink exact to="/exam18"> 가위바위보</NavLink> </li>
-
+          <li><NavLink exact to="/exam19"> Setinterval 예제 </NavLink> </li>
 
           {/* <li><NavLink exact to="/exam01" >useState 연습</NavLink> </li>
           <li><NavLink exact to="/contract">Contract</NavLink> </li> */}
@@ -144,6 +145,7 @@ function App() {
           <Route exact  path="/exam16" component={Exam16}></Route>
           <Route exact  path="/exam17" component={Exam17}></Route>
           <Route exact  path="/exam18" component={Exam18}></Route>
+          <Route exact  path="/exam19" component={Exam19}></Route>
           {/* <Route exact path="/exam01"  component={Exam01}  > </Route>
           <Route exact path="/contract" component={Contract} ></Route> */}
         
