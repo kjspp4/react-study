@@ -22,6 +22,7 @@ import Exam17  from './routes/Exam17'
 import Exam18  from './routes/Exam18'
 import Exam19  from './routes/Exam19'
 
+
 const Home = ()=>{
   return(
     <>
@@ -119,8 +120,9 @@ function App() {
           <li><NavLink exact to="/exam15"> 숫자야구 </NavLink> </li>
           <li><NavLink exact to="/exam16"> 리액트 성능 랜더링 UseRef </NavLink> </li>
           <li><NavLink exact to="/exam17"> 리액트 반응속도 체크 </NavLink> </li>
-          <li><NavLink exact to="/exam18"> 가위바위보</NavLink> </li>
-          <li><NavLink exact to="/exam19"> Setinterval 예제 </NavLink> </li>
+          <li><NavLink exact to="/exam18"> 로또</NavLink> </li>
+          <li><NavLink exact to="/exam19"> Setinterval 예제(가위바위보, 카운트) </NavLink> </li>
+          
 
           {/* <li><NavLink exact to="/exam01" >useState 연습</NavLink> </li>
           <li><NavLink exact to="/contract">Contract</NavLink> </li> */}
