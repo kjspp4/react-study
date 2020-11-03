@@ -21,6 +21,9 @@ import Exam16  from './routes/Exam16'
 import Exam17  from './routes/Exam17'
 import Exam18  from './routes/Exam18'
 import Exam19  from './routes/Exam19'
+import Exam20  from './routes/Exam20'
+import Exam21  from './routes/Exam21'
+import Exam22  from './routes/Exam22'
 
 
 const Home = ()=>{
@@ -122,6 +125,10 @@ function App() {
           <li><NavLink exact to="/exam17"> 리액트 반응속도 체크 </NavLink> </li>
           <li><NavLink exact to="/exam18"> 로또</NavLink> </li>
           <li><NavLink exact to="/exam19"> Setinterval 예제(가위바위보, 카운트) </NavLink> </li>
+          <li><NavLink exact to="/exam20">  리덕스 (X) 구현예제 </NavLink> </li>
+          <li><NavLink exact to="/exam21">  리덕스 (0) 구현예제 </NavLink> </li>
+          <li><NavLink exact to="/exam22">  리액트 리덕스 가 필요한 이유 </NavLink> </li>
+
           
 
           {/* <li><NavLink exact to="/exam01" >useState 연습</NavLink> </li>
@@ -148,6 +155,9 @@ function App() {
           <Route exact  path="/exam17" component={Exam17}></Route>
           <Route exact  path="/exam18" component={Exam18}></Route>
           <Route exact  path="/exam19" component={Exam19}></Route>
+          <Route exact  path="/exam20" component={Exam20}></Route>
+          <Route exact  path="/exam21" component={Exam21}></Route>
+          <Route exact  path="/exam22" component={Exam22}></Route>
           {/* <Route exact path="/exam01"  component={Exam01}  > </Route>
           <Route exact path="/contract" component={Contract} ></Route> */}
         
