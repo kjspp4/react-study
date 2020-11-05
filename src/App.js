@@ -24,8 +24,13 @@ import Exam19  from './routes/Exam19'
 import Exam20  from './routes/Exam20'
 import Exam21  from './routes/Exam21'
 import Exam22  from './routes/Exam22'
+import  ContextAPI_Exam  from './lecture/ContextAPI_Exam'
+import  RefExam  from './lecture/RefExam'
+import  useReduceExam  from './lecture/useReduceExam'
+import Redux_introduce from './lecture/Redux_introduce'
+import  MiddleWareExam  from './lecture/MiddleWareExam'
 
-
+import ImmerExam from './lecture/ImmerExam'
 const Home = ()=>{
   return(
     <>
@@ -128,6 +133,12 @@ function App() {
           <li><NavLink exact to="/exam20">  리덕스 (X) 구현예제 </NavLink> </li>
           <li><NavLink exact to="/exam21">  리덕스 (0) 구현예제 </NavLink> </li>
           <li><NavLink exact to="/exam22">  리액트 리덕스 가 필요한 이유 </NavLink> </li>
+          <li><NavLink exact to="/ContextAPI_Exam">  컨텍스트 API  사용법</NavLink> </li>
+          <li><NavLink exact to="/RefExam">  Ref 사용법</NavLink> </li>
+          <li><NavLink exact to="/useReduceExam">  useReduceExam 사용법</NavLink> </li>
+          <li><NavLink exact to="/Redux_introduce">  useReduceExam 사용법</NavLink> </li>
+          <li><NavLink exact to="/MiddleWareExam">  미들웨어 사용법</NavLink> </li>
+          <li><NavLink exact to="/ImmerExam">  Immer  사용법</NavLink> </li>
 
           
 
@@ -158,6 +169,17 @@ function App() {
           <Route exact  path="/exam20" component={Exam20}></Route>
           <Route exact  path="/exam21" component={Exam21}></Route>
           <Route exact  path="/exam22" component={Exam22}></Route>
+          <Route exact  path="/ContextAPI_Exam" component={ContextAPI_Exam}></Route>
+          <Route exact  path="/RefExam" component={RefExam}></Route>
+          <Route exact  path="/useReduceExam" component={useReduceExam}></Route>
+
+          <Route exact  path="/Redux_introduce" component={Redux_introduce}></Route>
+
+          <Route exact  path="/MiddleWareExam" component={MiddleWareExam}></Route>
+
+          <Route exact  path="/ImmerExam" component={ImmerExam}></Route>
+          
+          
           {/* <Route exact path="/exam01"  component={Exam01}  > </Route>
           <Route exact path="/contract" component={Contract} ></Route> */}
         

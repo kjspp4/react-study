@@ -53,7 +53,7 @@ const DisplayNumberRoot = ()=>{
     return(
         <div>
             <h1> DisplayNumberRoot Root</h1>
-            <DisplayNumberWapper ></DisplayNumberWapper>
+            {/* <DisplayNumberWapper ></DisplayNumberWapper> */}
         </div>
     );
 }
