@@ -31,6 +31,8 @@ import Redux_introduce from './lecture/Redux_introduce'
 import  MiddleWareExam  from './lecture/MiddleWareExam'
 
 import ImmerExam from './lecture/ImmerExam'
+import ReactReduxExam from './lecture/ReactReduxExam'
+
 const Home = ()=>{
   return(
     <>
@@ -139,6 +141,7 @@ function App() {
           <li><NavLink exact to="/Redux_introduce">  useReduceExam 사용법</NavLink> </li>
           <li><NavLink exact to="/MiddleWareExam">  미들웨어 사용법</NavLink> </li>
           <li><NavLink exact to="/ImmerExam">  Immer  사용법</NavLink> </li>
+          <li><NavLink exact to="/ReactReduxExam">  ReactReduxExam  사용법</NavLink> </li>
 
           
 
@@ -178,6 +181,8 @@ function App() {
           <Route exact  path="/MiddleWareExam" component={MiddleWareExam}></Route>
 
           <Route exact  path="/ImmerExam" component={ImmerExam}></Route>
+
+          <Route exact  path="/ReactReduxExam" component={ReactReduxExam}></Route>
           
           
           {/* <Route exact path="/exam01"  component={Exam01}  > </Route>
